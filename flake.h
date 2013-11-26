@@ -58,6 +58,7 @@ int flake::getDegree(){
 	return degree;
 }
 string flake::svgStr(){
+	//This is no longer used.
 	char buffer [200];//This is pretty stupid, make it good...
 	size_t len=sprintf(buffer,"<circle cx=\"%f\" cy=\"%f\" r=\"%f\" fill=\"rgb(%i,%i,%i)\"/>\n"\
 			,position.x,position.y,(rBase*pow(3.0,-degree))\
@@ -71,6 +72,7 @@ void flake::spawn(flake* pointer){
 	}
 }
 bool flake::withinHex(vector point){
+	//Tests if a point is within this flake's bounding hexagon.
 	double x=point.x-position.x;
 	double y=point.y-position.y;
 	double u= x*pow(3.0,-0.5)+y;
@@ -83,6 +85,7 @@ bool flake::withinHex(vector point){
 }
 
 class hardFlake: public flake{
+//Class for hardcoded flakes, like the primary and seccondary color ones.
 public:
 	hardFlake(vector,color,int);
 	hardFlake(vector,color,int,flake**);

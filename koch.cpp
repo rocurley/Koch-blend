@@ -35,7 +35,7 @@ void generateFlakes(flake* list,int length,flake* output){
 int main(int argc,char *argv[])
 {
 	if(argc!=2){
-		cout << "Syntax Error :P";
+		cout << "This program takes 1 argument: the recursion depth.\n";
 		return 1;
 	}
 	int depth=atoi(argv[1]);
